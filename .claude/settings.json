@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ' *)",
+      "WebFetch(domain:embedez.com)",
+      "WebFetch(domain:embedded.gallery)",
+      "PowerShell(node --check src/index.js)",
+      "PowerShell(node --check src/facebook.js)",
+      "PowerShell(node --check src/embedProxy.js)",
+      "PowerShell(node --check src/tiktok.js)",
+      "WebFetch(domain:fxfb.seria.moe)",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"https://fxfb.seria.moe/\" -UseBasicParsing -TimeoutSec 15; \"STATUS: $\\($r.StatusCode\\)\"; $r.Content.Substring\\(0, [Math]::Min\\(500, $r.Content.Length\\)\\) } catch { \"ERROR: $\\($_.Exception.Message\\)\" })",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"https://fxfb.seria.moe/\" -UseBasicParsing -TimeoutSec 15; $r.Content | Select-String -Pattern \"<title>|404|domain\" -AllMatches | Select-Object -First 5 } catch { \"ERROR: $\\($_.Exception.Message\\)\" })",
+      "PowerShell(npm view yt-dlp-exec version 2>$null)",
+      "PowerShell(npm view yt-dlp-exec description 2>$null)",
+      "PowerShell(npm install)",
+      "PowerShell(& \"node_modules\\\\yt-dlp-exec\\\\bin\\\\yt-dlp.exe\" --version)",
+      "PowerShell(npm uninstall yt-dlp-exec)",
+      "Bash(gh auth *)",
+      "Bash(gh --version)"
+    ]
+  }
+}
