@@ -3,7 +3,7 @@ services:
     name: tiktok-discord-bot
     runtime: node
     plan: free
-    buildCommand: npm install
+    buildCommand: mkdir -p $HOME/bin && ln -sf $(command -v python3) $HOME/bin/python && export PATH="$HOME/bin:$PATH" && npm install
     startCommand: npm start
     healthCheckPath: /health
     envVars:
